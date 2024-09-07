@@ -18,8 +18,4 @@ Updates:
 The repository will be updated frequently as I progress through the challenge. Each update will include new features, bug fixes, and improvements, along with detailed commit messages explaining the changes made.
 
 Contribution:
-<<<<<<< Updated upstream
 This repository is open to contributions and feedback. If you have suggestions or improvements, feel free to submit a pull request or open an issue. Collaboration is encouraged to foster a learning environment for all.
-=======
-This repository is open to contributions and feedback. If you have suggestions or improvements, feel free to submit a pull request or open an issue. Collaboration is encouraged to foster a learning environment for all.
->>>>>>> Stashed changes
