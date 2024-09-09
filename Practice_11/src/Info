@@ -1,0 +1,4 @@
+Java does not support multiple and hybrid inheritance through class;
+to reduce complexity and make the language simple
+
+Both Multiple and Hybrid Inheritance is possible in java through Abstract classes and Interfaces
