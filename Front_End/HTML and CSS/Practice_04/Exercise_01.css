@@ -1,0 +1,23 @@
+img{
+  margin-right: 20px;
+}
+
+.img1{
+  width: 200px;
+  border-radius: 15px;
+}
+
+.img2{
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img3{
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 120px;
+}

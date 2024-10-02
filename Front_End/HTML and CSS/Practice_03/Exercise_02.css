@@ -1,0 +1,50 @@
+
+p{
+  font-family: arial;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.new{
+  font-size: 10px;
+  color: rgb(175, 137, 24);
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.mac{
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.pros{
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.price{
+  font-size: 14;
+  text-align: center;
+}
+
+.buy{
+  background-color: rgb(0, 87, 194);
+  color: white;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 20px;
+}
+
+.buydiv{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

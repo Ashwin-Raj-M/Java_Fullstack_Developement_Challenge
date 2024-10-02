@@ -1,0 +1,63 @@
+p{
+  font-family: Roboto; /* Since it is in all the  paragraphs*/
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.Video-Title{
+  /* font-family: arial; */
+  font-weight: bold;
+  font-size: 18px;
+  width: 300px;
+  line-height: 24px;
+  margin-bottom: 5px;
+
+}
+
+.video-stats{
+  /* font-family: arial; */
+  font-size: 14px;
+  color: #606060;
+  /* margin-top: 0px; */
+  margin-bottom: 20px;
+}
+
+.Video-Author{
+  /* font-family: arial; */
+  font-size: 14px;
+  color: #606060;
+  /* margin-top: 0px;  */
+  margin-bottom: 20px;
+}
+
+.Video-Description{
+  /* font-family: arial; */
+  font-size: 14px;
+  color: #606060;
+  /* margin-top: 0px;  */
+  width: 270px; /* CSS Specificity (selector which is highly specific will be styled) */
+  line-height: 20px;
+  margin-bottom: 100px;
+}
+
+.apple-text{
+  font-size: 14px;
+  background-color: #e34140;
+  color: white;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  /* text-decoration: underline; */
+}
+
+/* This method be used to over-come the fact that multiplle spaces
+are not possible in HTML */
+/* Try by un-commenting */
+/* .shop{
+  margin-left: 100px;
+} */
+
+.shop:hover{ /* CSS for Text Element */
+  text-decoration: underline;
+  cursor: pointer;
+}

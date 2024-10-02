@@ -1,0 +1,20 @@
+input {
+  background: #aa7fce;
+  border: 1px solid #4857bb;
+  color: #4857bb;
+  height: 24px;
+  box-sizing: border-box;
+  transition: background 0.5s linear 0s;
+}
+
+input:hover,
+input:focus {
+  background: #E2C2FD;
+  transition: none;
+}
+
+input:active {
+  color: #E2C2FD;
+  background: #4857bb;
+  transition: background 0.5s linear 0s;
+}
