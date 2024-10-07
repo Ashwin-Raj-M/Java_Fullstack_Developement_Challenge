@@ -1,0 +1,170 @@
+<!-- In grid the width of the elemets are define 
+ first and the elements are put into it, hence the widthing 
+ is ridge with order of elements.
+ 
+ While in flex, the width if each element is defined int the 
+ element itself, hence the layout is not rigid with order of the 
+ elements. The width of the elements retained irrespective of the order-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Flexbox_Practice
+  </title>
+</head>
+
+<body style="padding-bottom: 1000px;">
+  <div style="display: flex; 
+                flex-direction: row; 
+                margin-bottom: 30px;">
+    <div style="background-color: lightblue;">
+      div1
+    </div>
+    <div style="background-color: lightpink;">
+      div2<p>text</p>
+    </div>
+  </div>
+
+  <div style="display: flex; 
+                flex-direction: row;
+                margin-bottom: 30px;">
+    <div style="background-color: lightblue;
+                  width: 100px;">
+      100px
+    </div>
+    <div style="background-color: lightpink;
+                  flex: 1;">
+      flex: 1<!-- flex : 1 is 1fr equvilant of grid -->
+    </div>
+  </div>
+
+  <div style="display: flex; 
+                flex-direction: row;
+                margin-bottom: 30px;">
+    <div style="background-color: lightblue;
+                  width: 100px;">
+      100px
+    </div>
+    <div style="background-color: lightpink;
+                  flex: 1;">
+      flex: 1
+    </div>
+    <div style="background-color: lightblue;
+                  flex: 2;">
+      flex: 2 <!-- flex : 2 is 2fr equvilant of grid -->
+    </div>
+  </div>
+
+  <div style="display: flex; 
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 30px;
+                height: 70px;
+                border-style: solid;
+                border-color: black;">
+    <div style="background-color: lightblue;
+                  width: 100px;">
+      100px
+    </div>
+    <div style="background-color: lightpink;
+                  width: 100px;">
+      100px
+    </div>
+    <div style="background-color: lightblue;
+                  width: 100px;">
+      100px <!-- flex : 2 is 2fr equvilant of grid -->
+    </div>
+  </div>
+
+  <div style="display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    height: 70px;
+    border-style: solid;
+    border-color: black;">
+    <div style="background-color: lightblue;
+      width: 100px;">
+      100px
+    </div>
+    <div style="background-color: lightpink;
+      width: 100px;">
+      100px
+    </div>
+    <div style="background-color: lightblue;
+      width: 100px;">
+      100px <!-- flex : 2 is 2fr equvilant of grid -->
+    </div>
+  </div>
+
+  <div style="display: flex; 
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  height: 70px;
+  border-style: solid;
+  border-color: black;">
+  <div style="background-color: lightblue;
+    width: 100px;">
+    100px
+  </div>
+  <div style="background-color: lightpink;
+    width: 100px;">
+    100px
+  </div>
+  <div style="background-color: lightblue;
+    width: 100px;">
+    100px <!-- flex : 2 is 2fr equvilant of grid -->
+  </div>
+</div>
+
+<div style="display: flex; 
+flex-direction: row;
+justify-content: space-evenly;
+margin-bottom: 30px;
+height: 70px;
+border-style: solid;
+border-color: black;">
+<div style="background-color: lightblue;
+  width: 100px;">
+  100px
+</div>
+<div style="background-color: lightpink;
+  width: 100px;">
+  100px
+</div>
+<div style="background-color: lightblue;
+  width: 100px;">
+  100px <!-- flex : 2 is 2fr equvilant of grid -->
+</div>
+</div>
+
+<div style="display: flex; 
+flex-direction: row;
+justify-content: space-between;
+align-items: start;
+/* align-items: center; */
+/* align-items: end; */
+margin-bottom: 30px;
+height: 70px;
+border-style: solid;
+border-color: black;">
+<div style="background-color: lightblue;
+  width: 100px;">
+  100px
+</div>
+<div style="background-color: lightpink;
+  width: 100px;">
+  100px
+</div>
+<div style="background-color: lightblue;
+  width: 100px;">
+  100px <!-- flex : 2 is 2fr equvilant of grid -->
+</div>
+</div>
+
+</body>
+
+</html>
