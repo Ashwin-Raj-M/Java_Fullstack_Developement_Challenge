@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>TODO</title>
+</head>
+<body>
+    <header class="add">
+        <div class="title">
+            Never forget your <span class="accent">TASKs</span> again.
+        </div>
+        <div class="inputs">
+            <input type="text" name="task" class="addTask" id="addTaskField" required>
+            <div class="lable">Enter your TASK . . .</div>
+            <img src="plus.svg" alt="add" class="addIcon" id="addTaskButton">
+        </div>
+    </header>
+    <section class="sec">
+        <div class="box" id="todo">
+            <div class="title-list">
+                TO<span class="accent">D</span>O
+            </div>
+            <div id="tasksTodoContainer">
+                <!-- Tasks will appear here -->
+            </div>
+            <div class="tasks-todo-template" id="tasksTodoTemplate">
+                <div class="task">
+                    <img src="check_box_outline_blank_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="check-icon" alt="check">
+                    <div class="task-box">
+                        <img src="grip-vertical-solid.svg" class="gripper" alt="Gripper">
+                        <p></p>
+                    </div>
+                    <img src="delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="delete-icon" alt="Delete">
+                </div>
+            </div>
+        </div>
+
+        <div class="vline"></div>
+
+        <div class="box" id="done">
+            <div class="title-list">
+                DO<span class="accent">N</span>E
+            </div>
+            <div id="tasksDoneContainer">
+                <!-- Tasks will appear here -->
+            </div>
+            <div class="tasks-done-template" id="tasksDoneTemplate">
+                <div class="task-done">
+                    <img src="select_check_box_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="check-icon" id="uncheck" alt="uncheck">
+                    <div class="task-box">
+                        <img src="grip-vertical-solid.svg" class="gripper" alt="Gripper">
+                        <p class="done-task-content"></p>
+                    </div>
+                    <img src="delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="delete-icon" alt="Delete">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

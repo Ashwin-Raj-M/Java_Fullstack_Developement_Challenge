@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e2e2e;
+            color: #eaeaea;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .task-input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid orange;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .add-button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+            background-color: orange;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: darkorange;
+        }
+
+        .tasks {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Task card template styles */
+        .task-template {
+            display: none; /* Hidden by default */
+        }
+
+        .task {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .check-icon {
+            padding-right: 20px;
+            height: 25px;
+            cursor: pointer;
+            filter: brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(0%) hue-rotate(321deg) brightness(111%) contrast(91%);
+        }
+
+        .check-icon:hover {
+            filter: invert(39%) sepia(67%) saturate(500%) hue-rotate(71deg) brightness(99%) contrast(89%);
+        }
+
+        .task-box {
+            width: 300px;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 10px;
+            border-color: orange;
+            padding-left: 15px;
+            color: #eaeaea;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .delete-icon {
+            padding-left: 18px;
+            width: 25px;
+            cursor: pointer;
+            filter: brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(0%) hue-rotate(321deg) brightness(111%) contrast(91%);
+        }
+
+        .delete-icon:hover {
+            filter: invert(71%) sepia(19%) saturate(6157%) hue-rotate(359deg) brightness(101%) contrast(105%);
+        }
+
+        .gripper {
+            height: 20px;
+            filter: invert(71%) sepia(19%) saturate(6157%) hue-rotate(359deg) brightness(101%) contrast(105%);
+            margin-right: 15px;
+        }
+
+        .gripper:hover {
+            filter: brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(0%) hue-rotate(321deg) brightness(111%) contrast(91%);
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <input type="text" class="task-input" id="taskInput" placeholder="Enter task content">
+        <button class="add-button" id="addButton">Add Task</button>
+    </div>
+
+    <!-- Hidden template for the task card -->
+    <div class="task-template">
+        <div class="task">
+            <img src="check_box_outline_blank_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="check-icon" alt="check">
+            <div class="task-box">
+                <img src="grip-vertical-solid.svg" class="gripper" alt="Grippre">
+                <p></p> <!-- Task content goes here -->
+            </div>
+            <img src="delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="delete-icon" alt="Delete">
+        </div>
+    </div>
+
+    <div class="tasks" id="tasksContainer">
+        <!-- Tasks will be dynamically added here -->
+    </div>
+
+    <script>
+        const addButton = document.getElementById('addButton');
+        const taskInput = document.getElementById('taskInput');
+        const tasksContainer = document.getElementById('tasksContainer');
+        const taskTemplate = document.querySelector('.task-template');
+
+        addButton.addEventListener('click', () => {
+            const taskContent = taskInput.value.trim();
+
+            if (taskContent) {
+                // Clone the template
+                const taskClone = taskTemplate.cloneNode(true);
+                
+                // Fill the content in the cloned task card
+                const taskText = taskClone.querySelector('p');
+                taskText.textContent = taskContent;
+
+                // Show the cloned task card (remove the display: none)
+                taskClone.classList.remove('task-template');
+                
+                // Append the cloned task to the tasks container
+                tasksContainer.appendChild(taskClone);
+
+                // Clear input field
+                taskInput.value = '';
+            } else {
+                alert('Please enter a task!');
+            }
+        });
+    </script>
+</body>
+</html>
