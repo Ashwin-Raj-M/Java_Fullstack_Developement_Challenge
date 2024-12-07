@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>DOM</title>
+    <style>
+      body{
+        font-family: Roboto;
+      }
+      button{
+        color: white;
+        height: 25px;
+        border-radius: 20px;
+        border-style: none;
+        background-color: #3a3a3a;
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Youtube Subscribe</p>
+    <button class="sub-but" onclick="change()">Subscribe</button>
+  </body>
+  <script>
+    const sub_but = document.querySelector('.sub-but')
+    function change(){
+      if(sub_but.innerText == 'Subscribe'){
+        sub_but.innerHTML = 'Subscribed';
+      }
+      else {
+        sub_but.innerHTML = 'Subscribe';
+      }
+    }    
+  </script>
+</html> 

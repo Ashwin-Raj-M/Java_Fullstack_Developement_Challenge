@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables JS</title>
+</head>
+<body>
+  <p>Cart Quantity</p>
+  <button onclick="increase()">Add to Cart</button>
+  <button onclick="increase2()">+2</button>
+  <button onclick="increase3()">+3</button>
+  <button onclick="show()" >Show Quantity</button>
+  <button onclick="reset()" >Reset Cart</button>
+  <script>
+    let cartQuant = 0;
+    const vara = 5; // alway will be constant
+    var varab = 3; // has come issues hence not used in new js
+    function increase(){
+      cartQuant ++;
+      // alert('added');
+      console.log('added');
+    }
+
+    function increase2(){
+      cartQuant += 2;
+      // alert('added');
+      console.log('added 2');
+    }
+
+    function increase3(){
+      cartQuant += 3;
+      // alert('added');
+      console.log('added 3');
+    }
+
+    function show(){
+      // alert(cart);
+      console.log(cartQuant);
+    }
+
+    function reset(){
+      // alert(cart);
+      cartQuant = 0;
+      console.log('Cart Reset');
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock Paper Sissor JS</title>
+  </head>
+  <body>
+
+    <p>Rock Paper Sissor Game</p>
+
+    <button onclick="
+    compareMoves('Rock')">
+      Rock 
+    </button>
+
+    <button onclick="
+    manMove = 
+    compareMoves('Paper')">
+      Paper
+    </button>
+
+    <button onclick="
+    compareMoves('Sissor')">
+      Sissor
+    </button>
+
+    <button onclick="
+    reset()">
+      Reset Score
+    </button>
+
+<script>
+
+  let score = JSON.parse(localStorage.getItem('score')) || {
+      win : 0,
+      loose : 0,
+      tie: 0
+    };
+
+  function reset(){
+    score = {  
+      win : 0,
+      loose : 0,
+      tie: 0
+    }
+    localStorage.removeItem('score'); // this also removes the data from the storesge, it will not comback when refreshed
+  }
+  
+  function compareMoves(manMove){
+
+    let randomNumber = Math.random();
+    let computerMove;
+    
+    // console.log(typeof(score));
+
+    if(randomNumber >= 0 && randomNumber < 1/3){
+      computerMove = 'Rock';
+    }
+    else if(randomNumber >= 1/3 && randomNumber < 2/3){
+      computerMove = 'Paper';
+    }
+    else{
+      computerMove = 'Sissor';
+    }
+
+    if(computerMove == manMove){
+      score.tie++;
+      console.log(`Your move: ${manMove}. Computer Move: ${computerMove}. "Tie"
+Wins: ${score.win}; Looses: ${score.loose}; Ties: ${score.tie}`);
+      alert(`Your move: ${manMove}. Computer Move: ${computerMove}. "Tie"
+Wins: ${score.win}; Looses: ${score.loose}; Ties: ${score.tie}`);
+    }
+    else if(computerMove === 'Rock' && manMove === 'Sissor' || 
+      computerMove === 'Paper' && manMove === 'Rock' ||
+      computerMove === 'Sissor' && manMove === 'Paper'
+    ){
+      score.loose++;
+      console.log(`Your move: ${manMove}. Computer Move: ${computerMove}. "You Loose"
+Wins: ${score.win}; Looses: ${score.loose}; Ties: ${score.tie}`);
+      alert(`Your move: ${manMove}. Computer Move: ${computerMove}. "You Loose"
+Wins: ${score.win}; Looses: ${score.loose}; Ties: ${score.tie}`);
+    }
+    else{
+      score.win++;
+      console.log(`Your move: ${manMove}. Computer Move: ${computerMove}. "You Win!"
+Wins: ${score.win}; Looses: ${score.loose}; Ties: ${score.tie}`);
+      alert(`Your move: ${manMove}. Computer Move: ${computerMove}. "You Win!"
+Wins: ${score.win}; Looses: ${score.loose}; Ties: ${score.tie}`);
+    }
+
+    localStorage.setItem('score', JSON.stringify(score));
+  }
+
+</script>
+
+  </body>
+</html>
