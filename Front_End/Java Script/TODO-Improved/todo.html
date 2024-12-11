@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TODO</title>
+</head>
+<body>
+    <header class="add">
+        <div class="title">
+            Never forget your <span class="accent">TASKs</span> again.
+        </div>
+        <div class="inputs">
+            <input type="text" name="task" class="addTask" id="addTaskField" required>
+            <div class="lable">Enter your TASK . . .</div>
+            <img src="plus.svg" alt="add" class="addIcon" id="addTaskButton">
+            <input type="date" name="due" class="addDue" id="addDueField" required>
+            <img src="smiley.png" alt="smiley" class="smiley">
+        </div>
+    </header>
+    <section class="sec">
+        <div class="box" id="todo">
+            <div class="title-list">
+                TO<span class="accent">D</span>O
+            </div>
+            <div class="tasksTodoContainer">
+                <!-- Tasks will appear here -->
+                <!-- <div class="tasks-todo-template" id="tasksTodoTemplate">
+                    <div class="task">
+                        <img src="check_box_outline_blank_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="check-icon" alt="check" onclick="moveToDone(0)">
+                        <div class="task-box">
+                            <div class="parentCover"></div>
+                            <img src="grip-vertical-solid.svg" class="gripper" alt="Gripper">
+                            <p>
+                                Test Task
+                            </p>
+                            <div class="dueDateBox">
+                                <p class="dueDate">
+                                    <span class="accent1">
+                                        Due Date : 
+                                    </span>
+                                    Test Date
+                                </p>
+                            </div>
+                        </div>
+                        <img src="delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="delete-icon" alt="Delete" onclick="removeTaskFromArray(0)">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="vline"></div>
+
+        <div class="box" id="done">
+            <div class="title-list">
+                DO<span class="accent">N</span>E
+            </div>
+            <div class="tasksDoneContainer">
+                <!-- Tasks will appear here -->
+                <!-- <div class="tasks-todo-template" id="tasksTodoTemplate">
+                    <div class="task">
+                        <img src="select_check_box_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="check-icon" alt="check" onclick="moveToTodo(0)">
+                        <div class="task-box">
+                            <img src="grip-vertical-solid.svg" class="gripper" alt="Gripper">
+                            <p>
+                                Test Done Task
+                            </p>
+                            <div class="dueDateBox">
+                                <p class="dueDate">
+                                    Completed On : Test Done Date
+                                </p>
+                            </div>
+                        </div>
+                        <img src="delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" class="delete-icon" alt="Delete" onclick="
+                        removeTaskFromDoneArray(0)">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <script defer src="script.js"></script>
+</body>
+</html>

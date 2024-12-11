@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock Paper Sissor JS</title>
+  </head>
+  <body>
+
+    <p>Rock Paper Sissor Game</p>
+
+    <button onclick="
+    compareMoves('Rock')">
+      Rock 
+    </button>
+
+    <button onclick="
+    compareMoves('Paper')">
+      Paper
+    </button>
+
+    <button onclick="
+    compareMoves('Sissor')">
+      Sissor
+    </button>
+
+    <button onclick="
+    reset()">
+      Reset Score
+    </button>
+
+    <p id="resultField">
+      Your move: -.<br> Computer Move: -.<br><br> 
+      Result: 'Play to Find' <br><br>Wins: 0; Looses: 0; Ties: 0 <!-- The Result Gets Added here -->
+    </p>
+
+    <button class="autoplay" onclick="autoplay()">Autoplay</button>
+    
+    <script src="AutoPlay-RPS.js"></script>
+  </body>
+</html>

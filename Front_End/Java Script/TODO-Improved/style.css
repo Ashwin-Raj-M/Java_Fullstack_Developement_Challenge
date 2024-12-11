@@ -1,0 +1,318 @@
+body{
+    font-family: quicksand;
+    background: linear-gradient(0deg, rgb(43, 43, 43) 0%, rgb(37, 37, 37) 50%, rgb(27, 27, 27) 100%);
+    height: 800px;
+}
+
+.title{
+    text-align: center;
+    margin: 40px;
+    font-size: 30px;
+    font-weight:bolder;
+    color: orange;
+}
+
+.title-list{
+    text-align: center;
+    margin: 40px;
+    font-size: 30px;
+    font-weight:bolder;
+    color: orange;
+}
+
+.accent{
+    color: #eaeaea;
+}
+
+.accent1{
+    color: orange;
+}
+
+.add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addTask{
+    z-index: 1000;
+    font-family: quicksand;
+    border: none;
+    appearance: none;
+    outline: none;
+    margin-bottom: 40px;
+    padding: 15px;
+    padding-left: 25px;
+    width: 350px;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 165, 0);
+    background: rgb(255, 255, 255,0);
+    font-size: 20px;
+    color: #eaeaea;
+    transition: all .3s;
+}
+
+.addDue{
+    z-index: 1000;
+    font-family: quicksand;
+    border: none;
+    appearance: none;
+    outline: none;
+    margin-bottom: 40px;
+    padding: 15px;
+    padding-left: 25px;
+    width: 350px;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 165, 0);
+    font-size: 20px;
+    color: #eaeaea;
+    margin-left: 20px;
+    /* visibility: hidden; */
+    /* opacity: 0; */
+    width: 0px;
+    background-color: orange;
+    transition: all .3s;
+}
+
+.addTask:focus + .lable, .addTask:valid + .lable{
+    color: rgb(234, 234, 234);
+    translate: 0px -30px;
+    font-size: 15px;
+}
+
+.addTask:focus, .addTask:valid{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.addTask:focus ~ .addDue, .addTask:valid ~ .addDue{
+    opacity: 1;
+    width: 180px;
+    visibility: visible;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgb(255, 255, 255,0);
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.lable{
+    color: rgb(83, 83, 83);
+    font-size: 20px;
+    position: absolute;
+    top: 16px;
+    left: 26.55px;
+    transition: all .3s;
+}
+
+.addIcon{
+    z-index: 1001;
+    position: absolute;
+    opacity: 0;
+    top: 40px;
+    right: -40px;
+    height: 20px;
+    cursor: pointer;
+    filter: invert(71%) sepia(19%) saturate(6157%) hue-rotate(359deg) brightness(101%) contrast(105%);
+    transition: all .3s;
+}
+
+.addTask:focus ~ .addIcon, .addTask:valid ~ .addIcon{
+    opacity: 1;
+    rotate: 90deg;
+    translate: 2.5px 0px;
+}
+
+.addIcon:hover{
+    filter: brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(0%) hue-rotate(321deg) brightness(111%) contrast(91%);
+}
+
+.smiley{
+    z-index: 1002;
+    position: absolute;
+    left: 425px;
+    top: 8px;
+    width: 28px;
+    rotate: 0.2deg;
+}
+
+.addTask:focus ~ .smiley, .addTask:valid ~ .smiley{
+    opacity: 0;
+}
+
+.sec{
+    display: flex;
+    flex-direction: row;
+}
+
+.vline{
+    margin-top: 70px;
+    width: 2px;
+    border-radius: 2px;
+    height: 450px;
+    background-color: orange;
+    justify-content: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+/* TODO */
+
+/* .tasks-todo-template{
+    display: none;
+} */
+
+.tasksTodoContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.check-icon{
+    padding-right: 20px;
+    height: 25px;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(0%) hue-rotate(321deg) brightness(111%) contrast(91%);
+}
+
+.check-icon:hover{
+    color: #308b30;
+    filter: invert(39%) sepia(67%) saturate(500%) hue-rotate(71deg) brightness(99%) contrast(89%);
+}
+
+.parentCover{
+    z-index: 1005;
+    position: absolute;
+    left:-2px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent;
+    /* border-color: white; */
+    height: 52px;
+    width: 315px;
+    border-radius: 10px;
+}
+
+.task-box{
+    position: relative;
+    /* position: absolute; */
+    width: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: orange;
+    padding-left: 15px;
+    color: #eaeaea;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dueDateBox{
+    position: absolute;
+    top: 52px;
+    left: 10px;
+    width: 290px;
+    height: 0px;
+    border-style: solid;
+    border-width: 2px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: orange;
+    border-bottom-width: 10px;
+    /* background-color:orange; */
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.dueDate{
+    position: absolute;
+    left: 20px;
+    top: -3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.05s ease-in;
+}
+
+.tasks-todo-template{
+    /* background-color: white; */
+    height: 70px;
+    transition: all 0.2s ease-in;
+    margin-bottom: 10px;
+}
+
+.tasks-todo-template:hover .dueDateBox{
+    height: 45px;
+    border-bottom-width: 2px;
+}
+
+.tasks-todo-template:hover{
+    height: 110px;
+}
+
+.tasks-todo-template:hover .dueDate{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.1s ease-out 0.2s;
+}
+
+.delete-icon{
+    padding-left: 18px;
+    width: 25px;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(0%) hue-rotate(321deg) brightness(111%) contrast(91%);
+}
+
+.delete-icon:hover{
+    filter: invert(71%) sepia(19%) saturate(6157%) hue-rotate(359deg) brightness(101%) contrast(105%);
+}
+
+.gripper{
+    z-index: 1006;
+    height: 20px;
+    filter: invert(71%) sepia(19%) saturate(6157%) hue-rotate(359deg) brightness(101%) contrast(105%);
+    margin-right: 15px;
+}
+
+.gripper:hover{
+    filter: brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(0%) hue-rotate(321deg) brightness(111%) contrast(91%);
+    cursor: pointer;
+}
+
+/* DONE */
+
+/* .tasks-done-template{
+    display: none;
+} */
+
+.task-done{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.done-task-content{
+    text-decoration: line-through;
+}

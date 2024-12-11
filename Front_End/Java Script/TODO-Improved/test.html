@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Default state: text hidden */
+.text-container {
+  overflow: hidden; /* Ensure smooth transition without overflow */
+}
+
+.text {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in; /* Transition for fading in */
+}
+
+/* When hovering the container, text will emerge (fade in) */
+.text-container:hover .text {
+  opacity: 1; /* Text emerges */
+  transition: opacity 0.1s ease-out; /* Transition for fading out */
+}
+
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <p class="text">This is a text that will emerge and hide.</p>
+  </div>
+</body>
+</html>
+
