@@ -1,32 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    /* Default state: text hidden */
-.text-container {
-  overflow: hidden; /* Ensure smooth transition without overflow */
-}
-
-.text {
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s ease-in; /* Transition for fading in */
-}
-
-/* When hovering the container, text will emerge (fade in) */
-.text-container:hover .text {
-  opacity: 1; /* Text emerges */
-  transition: opacity 0.1s ease-out; /* Transition for fading out */
-}
-
-  </style>
-</head>
-<body>
-  <div class="text-container">
-    <p class="text">This is a text that will emerge and hide.</p>
+<!-- HTML -->
+<div class="custom-date-picker">
+  <input id="custom-date-input" type="text" placeholder="Select Date" readonly />
+  <button id="calendar-icon" type="button">📅</button>
+  <div id="calendar-popup" class="hidden">
+    <div class="calendar-grid">
+      <!-- Calendar grid will be dynamically generated -->
+    </div>
   </div>
-</body>
-</html>
+</div>
 
+<!-- CSS -->
+<style>
+  .custom-date-picker {
+    position: relative;
+    display: inline-block;
+  }
+
+  #custom-date-input {
+    padding-right: 40px;
+  }
+
+  #calendar-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #007BFF;
+  }
+
+  #calendar-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  const calendarIcon = document.getElementById("calendar-icon");
+  const calendarPopup = document.getElementById("calendar-popup");
+  const dateInput = document.getElementById("custom-date-input");
+
+  // Show/hide the calendar popup
+  calendarIcon.addEventListener("click", () => {
+    calendarPopup.classList.toggle("hidden");
+  });
+
+  // Generate a basic calendar grid (simplified)
+  const calendarGrid = document.querySelector(".calendar-grid");
+  const days = Array.from({ length: 30 }, (_, i) => i + 1); // Example days
+  days.forEach(day => {
+    const dayElement = document.createElement("div");
+    dayElement.textContent = day;
+    dayElement.style.cursor = "pointer";
+    dayElement.style.padding = "5px";
+    dayElement.style.display = "inline-block";
+
+    // Select a date
+    dayElement.addEventListener("click", () => {
+      dateInput.value = `2024-12-${String(day).padStart(2, "0")}`;
+      calendarPopup.classList.add("hidden");
+    });
+
+    calendarGrid.appendChild(dayElement);
+  });
+</script>

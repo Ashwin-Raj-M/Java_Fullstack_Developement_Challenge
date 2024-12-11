@@ -1,7 +1,9 @@
 body{
     font-family: quicksand;
     background: linear-gradient(0deg, rgb(43, 43, 43) 0%, rgb(37, 37, 37) 50%, rgb(27, 27, 27) 100%);
-    height: 800px;
+    min-height: 800px;
+    height: auto;
+    padding-bottom: 200px;
 }
 
 .title{
@@ -159,9 +161,11 @@ body{
     margin-top: 70px;
     width: 2px;
     border-radius: 2px;
-    height: 450px;
+    height: auto;
+    min-height: 400px;
     background-color: orange;
     justify-content: center;
+    padding-bottom: 50px;
 }
 
 .box{
@@ -229,7 +233,7 @@ body{
     align-items: center;
 }
 
-.dueDateBox{
+.dueDateBox, .doneDueDateBox{
     position: absolute;
     top: 52px;
     left: 10px;
@@ -242,7 +246,7 @@ body{
     border-color: orange;
     border-bottom-width: 10px;
     /* background-color:orange; */
-    transition: all 0.2s ease-in;
+    transition: all 0.08s ease-in;
     cursor: pointer;
 }
 
@@ -255,10 +259,14 @@ body{
     transition: all 0.05s ease-in;
 }
 
-.tasks-todo-template{
+.doneTaskText{
+    text-decoration: line-through;
+}
+
+.tasks-todo-template, .tasks-done-template{
     /* background-color: white; */
     height: 70px;
-    transition: all 0.2s ease-in;
+    transition: all 0.08s ease-in;
     margin-bottom: 10px;
 }
 
@@ -267,14 +275,25 @@ body{
     border-bottom-width: 2px;
 }
 
-.tasks-todo-template:hover{
-    height: 110px;
+.tasks-done-template:hover .doneDueDateBox{
+    height: 85px;
+    border-bottom-width: 2px;
 }
 
-.tasks-todo-template:hover .dueDate{
+.tasks-todo-template:hover{
+    height: 110px;
+    cursor: pointer;
+}
+
+.tasks-done-template:hover{
+    height: 150px;
+    cursor: pointer;
+}
+
+.tasks-todo-template:hover .dueDate, .tasks-done-template:hover .dueDate{
     visibility: visible;
     opacity: 1;
-    transition: all 0.1s ease-out 0.2s;
+    transition: all 0.08s ease-out 0.08s;
 }
 
 .delete-icon{
@@ -315,4 +334,22 @@ body{
 
 .done-task-content{
     text-decoration: line-through;
+}
+
+.waterMarkTodo{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noTaskAddedIcon{
+    width: 200px;
+    filter: brightness(0) saturate(100%) invert(21%) sepia(18%) saturate(23%) hue-rotate(352deg) brightness(91%) contrast(99%); 
+}
+
+.noTaskAdded{
+    font-size: 3rem;
+    font-weight: 900;
+    color: #333333;
 }
