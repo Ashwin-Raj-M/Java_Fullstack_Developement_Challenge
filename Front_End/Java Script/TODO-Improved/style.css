@@ -142,10 +142,11 @@ body{
 .smiley{
     z-index: 1002;
     position: absolute;
-    left: 425px;
-    top: 8px;
-    width: 28px;
+    left: 416.6px;
+    top: 10.9px;
+    width: 40px;
     rotate: 0.2deg;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(13%) saturate(333%) hue-rotate(343deg) brightness(87%) contrast(68%);
 }
 
 .addTask:focus ~ .smiley, .addTask:valid ~ .smiley{
