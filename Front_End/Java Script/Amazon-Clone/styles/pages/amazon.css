@@ -137,10 +137,9 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+}
 
-  /* At first, the "Added to cart" message will
-     be invisible. Use JavaScript to change the
-     opacity and make it visible. */
+.added-to-cart-hide {
   opacity: 0;
 }
 

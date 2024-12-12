@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Dropdown by Data Attribute</title>
+</head>
+<body>
+    <h1>Find Specific Dropdown Example</h1>
+    
+    <label for="dropdown1">Product 1:</label>
+    <select class="dropdown" data-product-id="101">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select>
+
+    <label for="dropdown2">Product 2:</label>
+    <select class="dropdown" data-product-id="102">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
+
+    <button onclick="getDropdownValue(102)">Get Value for Product 102</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function getDropdownValue(productId) {
+            // Get all dropdowns with `data-product-id` attribute
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            console.log(dropdowns);
+            
+            // Find the dropdown with the specific `data-product-id`
+            const specificDropdown = Array.from(dropdowns).find(dropdown => 
+                dropdown.getAttribute('data-product-id') === productId.toString()
+            );
+
+            if (specificDropdown) {
+                // Get the selected value
+                const selectedValue = specificDropdown.value;
+
+                // Display the result
+                document.getElementById('result').textContent = `Selected value for product ${productId}: ${selectedValue}`;
+            } else {
+                document.getElementById('result').textContent = `No dropdown found for product ${productId}`;
+            }
+        }
+    </script>
+</body>
+</html>

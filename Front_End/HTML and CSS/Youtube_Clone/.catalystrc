@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "11600000000009463",
+      "name": "Youtube-Front-End-Clone",
+      "domain": {
+        "id": "50023922512",
+        "name": "youtube-front-end-clone-60035314506.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60035314506",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}

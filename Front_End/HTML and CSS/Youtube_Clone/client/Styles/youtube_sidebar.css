@@ -1,0 +1,95 @@
+.sidebar{
+  padding-top: 5px;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  left: 0px;
+  top: 55px;
+  bottom: 0px;
+  width: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 200;
+}
+
+/* .home-icon,
+.exp-icon,
+.sub-icon,
+.org-icon,
+.mus-icon,
+.lib-icon{
+  width: 24px;
+  margin-bottom: 5px;
+} */
+
+/* the above could be replaced by the bellow given */
+/* this means all the "img" within sidebar */
+/* this helps us eliminate a lot of class creation */
+.sidebar img{
+  width: 24px;
+  margin-bottom: 6px;
+}
+
+/* .home-button,
+.exp-button,
+.sub-button,
+.org-button,
+.mus-button,
+.lib-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 74px;
+  cursor: pointer;
+  /* border-style: solid; */
+  /* background-color: lightblue; */
+/* } */ 
+
+/* the above could be replaced by the bellow given */
+/* this means all the "div" within sidebar */
+/* this helps us eliminate a lot of class creation */
+.sidebar div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 74px;
+  cursor: pointer;
+  /* border-style: solid; */
+  /* background-color: lightblue; */
+}
+
+/* .home-button:hover,
+.exp-button:hover,
+.sub-button:hover,
+.org-button:hover,
+.mus-button:hover,
+.lib-button:hover{
+  background-color: rgb(231, 231, 231);
+} */
+
+/* the above could be replaced by the bellow given */
+/* this means that when hovered on all the "div" within sidebar */
+/* this helps us eliminate a lot of class creation */
+.sidebar div:hover{
+  background-color: rgb(231, 231, 231);
+}
+
+/* .home,
+.explore,
+.subscriptions,
+.originals,
+.music,
+.library{
+  font-size: 10px;
+} */
+
+/* the above could be replaced by the bellow given */
+/* this means that when hovered on all the "p" within sidebar */
+/* this helps us eliminate a lot of class creation */
+.sidebar p{
+  font-size: 10px;
+}
