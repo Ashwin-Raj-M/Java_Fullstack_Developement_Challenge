@@ -208,6 +208,13 @@ body{
 .tasksTodoContainer{
   display: flex;
   flex-direction: column;
+  align-items: end;
+}
+
+.tasksDoneContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .task{
@@ -245,7 +252,9 @@ body{
 .task-box{
   position: relative;
   /* position: absolute; */
-  width: 300px;
+  min-width: 300px;
+  width: auto;
+  padding-right: 15px;
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
@@ -260,7 +269,8 @@ body{
 .dueDateBox, .doneDueDateBox{
   position: absolute;
   top: 52px;
-  left: 10px;
+  /* left: 10px; */
+  right: 10px;
   width: 290px;
   height: 0px;
   border-style: solid;
@@ -272,6 +282,14 @@ body{
   /* background-color:orange; */
   transition: all 0.08s ease-in;
   cursor: pointer;
+}
+
+.doneDueDateBox{
+  position: absolute;
+  top: 52px;
+  left: 10px;
+  /* right: 10px; */
+  width: 290px;
 }
 
 .dueDate{
@@ -348,6 +366,8 @@ body{
 /* .tasks-done-template{
   display: none;
 } */
+
+
 
 .task-done{
   display: flex;
