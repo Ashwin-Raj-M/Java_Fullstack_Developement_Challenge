@@ -1,6 +1,7 @@
 // Importing nessary data
 import * as myCart from '../data/cart.js'
 import { products } from '../data/products.js';
+import { formatMoney } from './utils/money.js';
 
 // Function to render the Product Griid
 function renderProductGrid(){
@@ -27,7 +28,7 @@ function renderProductGrid(){
         </div>
 
         <div class="product-price">
-          ₹${(product.pricePiase / 100).toFixed(2)}
+          ₹${formatMoney(product.pricePiase)}
         </div>
 
         <div class="product-quantity-container">
