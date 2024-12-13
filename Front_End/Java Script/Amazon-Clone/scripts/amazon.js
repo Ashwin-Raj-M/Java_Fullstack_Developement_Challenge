@@ -89,6 +89,9 @@ const quantitySelectorFields = document.querySelectorAll('.js-quantity-selector'
 const cartQuantityIndicator = document.querySelector('.js-cart-quantity');
 const addedIndicators = document.querySelectorAll('.added-to-cart');
 
+// inetial rendering of the cart quantity in the header
+renderCartQuantity();
+
 // Event Listeners
 // Add to cart event
 addToCartButtons.forEach((button) => {

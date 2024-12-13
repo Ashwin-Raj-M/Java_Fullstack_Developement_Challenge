@@ -30,7 +30,8 @@ export function addToCart(productId, productQuantity){
   }else{
     cart.push({
       productId,
-      productQuantity 
+      productQuantity,
+      deliveryOption: 3
     });
     localStorageCart();
   }

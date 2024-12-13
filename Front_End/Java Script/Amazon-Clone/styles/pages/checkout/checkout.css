@@ -209,3 +209,12 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+
+.new-quantity-input{
+  width: 50px;
+  font-size: 16px;
+}
+
+.hide-class{
+  display: none;
+}
