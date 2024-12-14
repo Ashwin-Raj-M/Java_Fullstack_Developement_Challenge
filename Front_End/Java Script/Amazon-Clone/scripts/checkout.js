@@ -49,43 +49,37 @@ function renderOrderSummary(product, quantity, deliveryOption) {
           <div class="delivery-options-title">
             Choose a delivery option:
           </div>
-          <div class="delivery-option">
-            <input type="radio" class="delivery-option-input " name="delivery-option-${product.id}">
-            <div>
-              <div class="delivery-option-date">
-               ${date.dateFormatter(7)}
-              </div>
-              <div class="delivery-option-price">
-                FREE Shipping
-              </div>
-            </div>
-          </div>
-          <div class="delivery-option">
-            <input type="radio" class="delivery-option-input" name="delivery-option-${product.id}">
-            <div>
-              <div class="delivery-option-date">
-                ${date.dateFormatter(3)}
-              </div>
-              <div class="delivery-option-price">
-                ₹4.99 - Shipping
-              </div>
-            </div>
-          </div>
-          <div class="delivery-option">
-            <input type="radio" checked class="delivery-option-input" name="delivery-option-${product.id}">
-            <div>
-              <div class="delivery-option-date">
-               ${date.dateFormatter(1)}
-              </div>
-              <div class="delivery-option-price">
-                ₹9.99 - Shipping
-              </div>
-            </div>
-          </div>
+          ${renderDeliverOptions(product, deliveryOption.id)}
         </div>
       </div>
     </div>
   `;
+}
+
+//  function to render delivery options
+function renderDeliverOptions(product, deliveryOptionId){
+  let deliveryHtml = ``;
+
+  const toChecked = (id) => id === deliveryOptionId ? `checked` : ``;
+
+  const shippingCostString = (deliveryOption) => deliveryOption.shippingCostPiase === 0 ? `FREE` : `₹${formatMoney(deliveryOption.shippingCostPiase)}`; 
+
+  deliveryOptions.forEach(deliveryOption => {
+    deliveryHtml += `
+    <div class="delivery-option">
+      <input type="radio" ${toChecked(deliveryOption.id)} class="delivery-option-input" value="${deliveryOption.id}" name="${product.id}">
+      <div>
+        <div class="delivery-option-date">
+          ${date.dateFormatter(deliveryOption.shippingDays)}
+        </div>
+        <div class="delivery-option-price">
+          ${shippingCostString(deliveryOption)} Shipping
+        </div>
+      </div>
+    </div>
+    `
+  });
+  return deliveryHtml;
 }
 
 // Function to render payment summary
@@ -167,6 +161,7 @@ function attachEventListeners() {
   const deleteButtons = document.querySelectorAll('.delete-quantity-link');
   const updateButtons = document.querySelectorAll('.update-quantity-link');
   const saveButtons = document.querySelectorAll('.save-quantity-link');
+  const deliveryOptionRadios = document.querySelectorAll('.delivery-option-input');
 
   deleteButtons.forEach((deleteButton) => {
     deleteButton.addEventListener('click', () => {
@@ -212,6 +207,16 @@ function attachEventListeners() {
       retriveCartData();
     });
   });
+
+  deliveryOptionRadios.forEach(deliveryOptionRadio => {
+    deliveryOptionRadio.addEventListener('click', () => {
+      myCart.updateDeliveryOption(deliveryOptionRadio.name, Number(deliveryOptionRadio.value));
+
+      console.log(myCart.cart);
+      retriveCartData();
+    });
+  });
+
 }
 
 // DOM Elements

@@ -42,3 +42,9 @@ export function removeFromCart(productId){
   cart = cart.filter(cartProduct => cartProduct.productId !== productId);
   localStorageCart();
 }
+
+// function to update the delivery options
+export function updateDeliveryOption(productId, updatedValue){
+  const cartProductToUpdate = Array.from(cart).find(cartProduct => cartProduct.productId === productId);
+  cartProductToUpdate.deliveryOption = updatedValue;
+}
