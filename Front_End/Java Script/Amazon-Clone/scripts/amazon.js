@@ -1,7 +1,7 @@
 // Importing nessary data
 import * as myCart from '../data/cart.js'
 import { products } from '../data/products.js';
-import { formatMoney } from './utils/money.js';
+import formatMoney from './utils/money.js';
 
 // Function to render the Product Griid
 function renderProductGrid(){

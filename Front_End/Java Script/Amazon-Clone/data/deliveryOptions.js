@@ -12,4 +12,7 @@ export const deliveryOptions = [{
   shippingCostPiase: 999
 }];
 
-export default deliveryOptions;
+// function to find delivery option
+export function findDeliveryOption(cartdeliveryOption){
+  return deliveryOptions.find(deliveryOption => cartdeliveryOption === deliveryOption.id);
+}

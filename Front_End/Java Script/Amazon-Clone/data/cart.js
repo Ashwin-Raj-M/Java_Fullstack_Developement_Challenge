@@ -40,11 +40,22 @@ export function addToCart(productId, productQuantity){
 // function to remove items from cart
 export function removeFromCart(productId){
   cart = cart.filter(cartProduct => cartProduct.productId !== productId);
-  localStorageCart();
+  localStorageCart(); 
 }
 
 // function to update the delivery options
 export function updateDeliveryOption(productId, updatedValue){
   const cartProductToUpdate = Array.from(cart).find(cartProduct => cartProduct.productId === productId);
   cartProductToUpdate.deliveryOption = updatedValue;
+  localStorageCart();
+}
+
+//  function to get cart quantity
+export function getCartQuantity(){
+  return cart.reduce((total, cartProduct) => total + cartProduct.productQuantity, 0);
+}
+
+// function to find cart product
+export function findCartProduct(productId){
+  return cart.find((product) => product.productId == productId);
 }
