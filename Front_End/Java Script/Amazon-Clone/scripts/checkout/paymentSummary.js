@@ -18,8 +18,6 @@ export function renderPaymentSummary() {
     const product = myProducts.findProduct(cartProduct.productId);
     const deliveryOption = myOptions.findDeliveryOption(cartProduct.deliveryOption);
 
-    // console.log(deliveryOption);
-
     if (product) {
       totalCheckoutCost += product.pricePiase * quantity;
       totalShippingCost += deliveryOption.shippingCostPiase;
@@ -67,6 +65,6 @@ export function renderPaymentSummary() {
   `;
 
   paymentSummary.innerHTML = paymentSummaryHtml;
-  console.log(paymentSummary.innerHTML);
+  // console.log(paymentSummary.innerHTML);
 
 }

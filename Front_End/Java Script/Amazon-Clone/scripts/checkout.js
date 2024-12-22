@@ -1,12 +1,17 @@
 import * as orderSummary from './checkout/orderSummary.js';
 import * as paymentSummary from './checkout/paymentSummary.js';
+import * as checkoutHeader from './checkout/checkoutHeader.js';
 
+
+// rendering checkout header
+checkoutHeader.renderItemCountHeader();
 
 // Initialize rendering
 orderSummary.retriveCartData();
-console.log('hello');
+
+// rendering payment summary
 paymentSummary.renderPaymentSummary();
-console.log('hello');
+
 
 
 

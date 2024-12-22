@@ -1,6 +1,7 @@
-// Function to render item count at Header
-export default function renderItemCountHeader(totalQuantity) {
-  const itemCountHeader = document.querySelector('.return-to-home-link');
+import * as myCart from "../../data/cart.js";
 
-  itemCountHeader.innerHTML = `${totalQuantity} items`;
+// Function to render item count at Header
+export function renderItemCountHeader() {
+  const itemCountHeader = document.querySelector('.return-to-home-link');
+  itemCountHeader.innerHTML = `${myCart.getCartQuantity()} items`;
 }

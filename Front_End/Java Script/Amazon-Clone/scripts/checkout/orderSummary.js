@@ -2,9 +2,9 @@ import * as myCart from '../../data/cart.js';
 import * as myProducts from '../../data/products.js';
 import * as myOptions from '../../data/deliveryOptions.js';
 import formatMoney from '../utils/money.js';
-import * as date from '../utils/date.js'
-import renderItemCountHeader from './checkoutHeader.js';
-import * as paymentSummary from './paymentSummary.js'
+import * as date from '../utils/date.js';
+import * as checkoutHeader from './checkoutHeader.js';
+import * as paymentSummary from './paymentSummary.js';
 
 // Function to render order summary container
 export function renderOrderSummary(product, quantity, deliveryOption) {
@@ -108,7 +108,7 @@ export function retriveCartData() {
 
   orderSummaryContainer.innerHTML = orderSummaryHtml;
   // renderPaymentSummary(totalCheckoutCost, totalShippingCost, totalQuantity);
-  renderItemCountHeader(totalQuantity);
+  // renderItemCountHeader(totalQuantity);
   attachEventListeners();
 }
 
@@ -126,6 +126,7 @@ function attachEventListeners() {
       document.querySelector(`.cart-item-container-${productId}`).remove();
       retriveCartData();
       paymentSummary.renderPaymentSummary();
+      checkoutHeader.renderItemCountHeader();
     });
   });
 
@@ -163,6 +164,7 @@ function attachEventListeners() {
 
       retriveCartData();
       paymentSummary.renderPaymentSummary();
+      checkoutHeader.renderItemCountHeader();
     });
   });
 
@@ -173,6 +175,7 @@ function attachEventListeners() {
       console.log(myCart.cart);
       retriveCartData();
       paymentSummary.renderPaymentSummary();
+      checkoutHeader.renderItemCountHeader();
     });
   });
 
